@@ -1,0 +1,10 @@
+<div>
+  <h5 class="font-bold text-4xl">Categories#index</h5>
+  <ul>
+    <% @categories.each do |category| %>
+      <li>
+        <%= category.title %>
+      </li>
+    <% end %>
+  </ul>
+</div>
