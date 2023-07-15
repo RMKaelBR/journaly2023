@@ -3,5 +3,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get "/categories", to: "categories#index"
+  root "categories#index"
+
+  resources :categories do
+    resources :tasks
+  end
+  # get "/categories", to: "categories#index"
+  # get "/categories/:id", to: "categories#show"
 end
