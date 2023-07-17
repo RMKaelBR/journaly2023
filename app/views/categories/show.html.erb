@@ -1,44 +1,52 @@
-<div>
-  <h1 class="font-bold text-2xl"><%= @category.title %></h1>
+<div class="flex flex-col space-between">
+  <div class="flex">
+    <div>
+    <h1 class="font-bold text-2xl"><%= @category.title %></h1>
 
-  <p><%= @category.body %></p>
+    <p><%= @category.body %></p>
 
-</div>
-<div>
-  <ul>
-    <li><%= link_to "Edit", edit_category_path(@category) %></li>
-  </ul>
+    </div>
+    <div class="pl-2 pr-2">
+      <ul>
+        <li><%= link_to "Edit", edit_category_path(@category) %></li>
+      </ul>
+      
+      <%= button_to "Delete", category_path(@category), method: :delete %>
+    </div>
+  </div>
   
-  <%= button_to "Delete", category_path(@category), method: :delete %>
-</div>
 
-<div>
-  <h2 class="font-underline text-2xl">Tasks</h2>
-  <% @category.tasks.each do |task| %>
-    <p>
-      <strong>Task:</strong>
-      <%= task.title %>
-    </p>
+  <div class="flex pt-10">
+    <div>
+      <h2 class="font-underline text-2xl">Tasks</h2>
+      <% @category.tasks.each do |task| %>
+        <p>
+          <strong>Task:</strong>
+          <%= task.title %>
+        </p>
 
-    <p>
-      <%= task.body %>
-    <p>
-  <% end %>
-</div>
+        <p>
+          <%= task.body %>
+        <p>
+      <% end %>
+    </div>
 
-<div>
-  <h2 class="text-2xl">Add a Task:</h2>
-  <%= form_with model: [ @category, @category.tasks.build ] do |form| %>
-    <p>
-      <%= form.label :title %><br>
-      <%= form.text_field :title %>
-    </p>
-    <p>
-      <%= form.label :body %><br>
-      <%= form.text_area :body %>
-    </p>
-    <p>
-      <%= form.submit %>
-    </p>
-  <% end %>
+    <div class="pl-10">
+      <h2 class="text-2xl">Add a Task:</h2>
+      <%= form_with model: [ @category, @category.tasks.build ] do |form| %>
+        <p>
+          <%= form.label :title %><br>
+          <%= form.text_field :title %>
+        </p>
+        <p>
+          <%= form.label :body %><br>
+          <%= form.text_area :body %>
+        </p>
+        <p>
+          <%= form.submit %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+  
 </div>

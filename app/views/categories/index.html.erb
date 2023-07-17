@@ -1,14 +1,24 @@
-<nav>
-  <%= link_to "New Category", new_category_path %>
-</nav>
-<div>
-  <h1 class="font-bold text-4xl">Categories#index</h5>
-  <ul>
-    <% @categories.each do |category| %>
-      <li>
-        <%= link_to category.title, category %>
-      </li>
-    <% end %>
-  </ul>
-  
+<div class="flex flex-col">
+  <header>
+    <div class="hidden lg:flex lg:gap-x-12">
+      <div class="text-sm font-semibold leading-6 text-gray-900">
+        <%= link_to "New Category", new_category_path %>
+      </div>
+    </div>
+  </header>
+  <nav>
+    
+  </nav>
+  <div class="flex flex-col">
+    <h1 class="font-bold text-4xl">Categories#index</h5>
+    <ul>
+      <% @categories.each do |category| %>
+        <li>
+          <%= link_to category.title, category %>
+        </li>
+      <% end %>
+    </ul>
+
+  </div>
+
 </div>
