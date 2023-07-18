@@ -1,12 +1,22 @@
 <div class="flex flex-col space-between">
-  <div class="flex">
+  <header>
+    <nav>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <div class="text-sm font-semibold leading-6 text-gray-900">
+            <%= link_to "Home", root_path %>
+          </div>
+        </div>
+    </nav>
+  </header>
+
+  <div class="flex justify-between">
     <div>
     <h1 class="font-bold text-2xl"><%= @category.title %></h1>
 
     <p><%= @category.body %></p>
 
     </div>
-    <div class="pl-2 pr-2">
+    <div class="pl-2 pr-2 self-end">
       <ul>
         <li><%= link_to "Edit", edit_category_path(@category) %></li>
       </ul>
@@ -15,38 +25,28 @@
     </div>
   </div>
   
+  <div class="flex justify-between">
+    <div class="flex pt-10">
+      <div>
+        <%= render @category.tasks %>
+      </div>
 
-  <div class="flex pt-10">
-    <div>
-      <h2 class="font-underline text-2xl">Tasks</h2>
-      <% @category.tasks.each do |task| %>
-        <p>
-          <strong>Task:</strong>
-          <%= task.title %>
-        </p>
-
-        <p>
-          <%= task.body %>
-        <p>
-      <% end %>
-    </div>
-
-    <div class="pl-10">
-      <h2 class="text-2xl">Add a Task:</h2>
-      <%= form_with model: [ @category, @category.tasks.build ] do |form| %>
-        <p>
-          <%= form.label :title %><br>
-          <%= form.text_field :title %>
-        </p>
-        <p>
-          <%= form.label :body %><br>
-          <%= form.text_area :body %>
-        </p>
-        <p>
-          <%= form.submit %>
-        </p>
-      <% end %>
+      <div class="pl-10">
+        <h2 class="text-2xl">Add a Task:</h2>
+        <%= form_with model: [ @category, @category.tasks.build ] do |form| %>
+          <p>
+            <%= form.label :title %><br>
+            <%= form.text_field :title %>
+          </p>
+          <p>
+            <%= form.label :body %><br>
+            <%= form.text_area :body %>
+          </p>
+          <p>
+            <%= form.submit %>
+          </p>
+        <% end %>
+      </div>
     </div>
   </div>
-  
 </div>

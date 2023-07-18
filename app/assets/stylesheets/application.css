@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+ nav{
+  background-color: peachpuff;
+ }
+ 
+ a:hover {
+  cursor: pointer;
+  color: blue;
+ }
+
+ button:hover {
+  cursor: pointer;
+  color: blue;
+ }
+
+ #post_task {
+  color:red;
+ }
+
+ .post_task_div {
+  background-color: black;
+  width: 500px;
+  border: 1px solid red;
+ }
