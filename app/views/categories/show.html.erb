@@ -19,9 +19,9 @@
     <div class="pl-2 pr-2 self-end">
       <ul>
         <li><%= link_to "Edit", edit_category_path(@category) %></li>
+        <li><%= button_to "Delete", category_path(@category), method: :delete %></li>
       </ul>
       
-      <%= button_to "Delete", category_path(@category), method: :delete %>
     </div>
   </div>
   
@@ -33,20 +33,12 @@
 
       <div class="pl-10">
         <h2 class="text-2xl">Add a Task:</h2>
-        <%= form_with model: [ @category, @category.tasks.build ] do |form| %>
-          <p>
-            <%= form.label :title %><br>
-            <%= form.text_field :title %>
-          </p>
-          <p>
-            <%= form.label :body %><br>
-            <%= form.text_area :body %>
-          </p>
-          <p>
-            <%= form.submit %>
-          </p>
-        <% end %>
+        <%= render 'tasks/form' %>
       </div>
     </div>
   </div>
+
+  <footer>
+    <h1 id="pageTitle">Categories#show</h5>
+  </footer>
 </div>

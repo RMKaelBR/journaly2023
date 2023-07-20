@@ -9,16 +9,20 @@
     </nav>
   </header>
   
-  <div class="flex flex-col">
-    <h1 class="font-bold text-4xl">Categories#index</h5>
+  <div class="flex flex-col"> 
     <ul>
       <% @categories.each do |category| %>
-        <li>
-          <%= link_to category.title, category %>
-        </li>
+        <% unless category.archived? %>
+          <li>
+            <%= link_to category.title, category %>
+          </li>
+        <% end %>
       <% end %>
     </ul>
-
   </div>
-
+  
+  <footer>
+    <h1>Categories#index</h5>
+    <p >The journal has <%= Category.public_count %> categories.</p>
+  </footer>
 </div>

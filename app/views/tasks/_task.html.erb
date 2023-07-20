@@ -1,8 +1,10 @@
-<p>
-  <strong><%= task.title %></strong>:
-</p>
+<% unless task.archived? %>
+  <p>
+    <strong><%= task.title %></strong>:
+  </p>
 
-<p>
-  <%= task.body %>
-  <%#<%= button_to "Delete", category_path(@category), method: :delete %>
-<p>
+  <p>
+    <%= task.body %>
+    <%#<%= button_to "Delete", category_path(@category), method: :delete %>
+  <p>
+<% end %>

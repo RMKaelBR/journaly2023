@@ -28,12 +28,22 @@
   color: blue;
  }
 
- #post_task {
-  color:red;
- }
-
- .post_task_div {
+ #postTaskDiv {
   background-color: black;
   width: 500px;
   border: 1px solid red;
+ }
+
+ #pageTitle {
+  position: fixed;
+  color: gray;
+  bottom: 10px;
+  left: 10px;
+ }
+
+ footer {
+  position: fixed;
+  color: gray;
+  bottom: 10px;
+  left: 10px;
  }
