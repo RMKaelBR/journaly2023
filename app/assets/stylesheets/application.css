@@ -34,12 +34,12 @@
   border: 1px solid red;
  }
 
- #pageTitle {
+ /* #pageTitle {
   position: fixed;
   color: gray;
   bottom: 10px;
   left: 10px;
- }
+ } */
 
  footer {
   position: fixed;
