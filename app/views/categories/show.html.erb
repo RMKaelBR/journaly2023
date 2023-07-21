@@ -1,11 +1,11 @@
 <div class="flex flex-col space-between">
   <header>
     <nav>
-        <div class="hidden lg:flex lg:gap-x-12">
-          <div class="text-sm font-semibold leading-6 text-gray-900">
-            <%= link_to "Home", root_path %>
-          </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <div class="text-sm font-semibold leading-6 text-gray-900">
+          <%= link_to "Home", root_path %>
         </div>
+      </div>
     </nav>
   </header>
 
@@ -27,13 +27,13 @@
   
   <div class="flex justify-between">
     <div class="flex pt-10">
-      <div>
-        <%= render @category.tasks %>
-      </div>
-
       <div class="pl-10">
         <h2 class="text-2xl">Add a Task:</h2>
         <%= render 'tasks/form' %>
+      </div>
+      
+      <div class="pl-5">
+        <%= render @category.tasks %>
       </div>
     </div>
   </div>

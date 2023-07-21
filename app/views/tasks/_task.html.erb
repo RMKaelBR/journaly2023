@@ -1,10 +1,17 @@
-<% unless task.archived? %>
-  <p>
-    <strong><%= task.title %></strong>:
-  </p>
+<div class="space-x-5 relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+  <% unless task.archived? %>
+    <div class="flex">
+      <p class="w-80 max-w-xs">
+        <strong><%= task.title %></strong>
+      </p>
+      <%= link_to "☒", [task.category, task], data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %>
+    </div>
 
-  <p>
-    <%= task.body %>
-    <%#<%= button_to "Delete", category_path(@category), method: :delete %>
-  <p>
-<% end %>
+    <p>
+      <%= task.body %>
+    <p>
+  <% end %>
+</div>
