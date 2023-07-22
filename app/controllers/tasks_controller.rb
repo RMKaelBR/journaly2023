@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  http_basic_authenticate_with name: "asdf", password: "zxcv", only: :destroy
+  
   def create
     @category = Category.find(params[:category_id])
     @task = @category.tasks.create(task_params)

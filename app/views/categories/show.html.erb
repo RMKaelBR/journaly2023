@@ -19,7 +19,11 @@
     <div class="pl-2 pr-2 self-end">
       <ul>
         <li><%= link_to "Edit", edit_category_path(@category) %></li>
-        <li><%= button_to "Delete", category_path(@category), method: :delete %></li>
+        <%= link_to "Delete", category_path(@category), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %>
+        <%#<li><%= button_to "Delete", category_path(@category), method: :delete %> <%#</li>%>
       </ul>
       
     </div>
