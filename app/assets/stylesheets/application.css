@@ -13,9 +13,12 @@
  *= require_tree .
  *= require_self
  */
+/* border: 1px solid red; */
 
- nav{
+
+nav{
   background-color: peachpuff;
+  min-width: 30em;
  }
  
  a:hover {
@@ -28,10 +31,18 @@
   color: blue;
  }
 
- #postTaskDiv {
-  background-color: black;
-  width: 500px;
-  border: 1px solid red;
+ .navItems {
+  width: 300px;
+ }
+
+ /* .welcome {
+  width: 100%;
+ } */
+
+ #postButton:hover {
+  cursor: pointer;
+  color: blue;
+
  }
 
  /* #pageTitle {

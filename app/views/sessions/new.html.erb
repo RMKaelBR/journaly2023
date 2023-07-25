@@ -1,0 +1,23 @@
+<div class="justify-center">
+  <nav>
+    <div class="hidden lg:flex lg:gap-x-12">
+      <div class="text-sm font-semibold leading-6 text-gray-900">
+        <%= link_to "Welcome Page", root_path %>
+      </div>
+    </div>
+  </nav>
+  <h1>Sign-in</h1>
+  <%= form_with url: sign_in_path do |f| %>
+    <p>
+      <%= f.label 'email' %><br>
+      <%= f.text_field :email, id: 'email' %>
+    </p>
+    <p>
+      <%= f.label 'password' %><br>
+      <%= f.password_field :password, id: 'password' %>
+    </p>
+    <p>
+      <%= f.submit 'Sign-in' %>
+    </p>
+  <% end %>
+</div>

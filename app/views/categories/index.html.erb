@@ -2,7 +2,8 @@
   <header>
     <nav>
       <div class="hidden lg:flex lg:gap-x-12">
-        <div class="text-sm font-semibold leading-6 text-gray-900">
+        <div class="text-sm font-semibold leading-6 text-gray-900 navItems flex justify-evenly">
+          <%= link_to "Welcome Page", root_path %>
           <%= link_to "New Category", new_category_path %>
         </div>
       </div>
@@ -14,7 +15,7 @@
       <% @categories.each do |category| %>
         <% unless category.archived? %>
           <li>
-            <%= link_to category.title, category %>
+            [<%= category.status %>] <%= link_to category.title, category %>
           </li>
         <% end %>
       <% end %>

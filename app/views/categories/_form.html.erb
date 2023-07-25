@@ -18,11 +18,11 @@
 
     <div>
       <%= form.label :status %><br>
-      <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+      <%= form.select :status, ['public', 'private', 'archived'], selected: @category.status %>
     </div>
 
-    <div id="post_task_div">
-      <%= form.submit %>
+    <div>
+      <%= form.submit id: 'postButton' %>
     </div>
   <% end %>
 </div>
