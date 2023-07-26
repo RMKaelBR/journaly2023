@@ -15,10 +15,16 @@
  */
 /* border: 1px solid red; */
 
+body {
+  border: 1px solid red;
+}
 
 nav{
   background-color: peachpuff;
   min-width: 30em;
+  position: fixed;
+  top: 10px;
+  left: 5px;
  }
  
  a:hover {
