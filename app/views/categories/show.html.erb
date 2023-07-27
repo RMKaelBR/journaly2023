@@ -2,8 +2,9 @@
   <header>
     <nav >
       <div class="hidden lg:flex lg:gap-x-12">
-        <div class="text-sm font-semibold leading-6 text-gray-900 justify-evenly w-50">
+        <div class="text-sm font-semibold leading-6 text-gray-900 flex navItems justify-evenly w-50">
           <%= link_to "Home", categories_path %>
+          <p></p>
         </div>
       </div>
     </nav>
@@ -31,13 +32,12 @@
   
   <div class="flex justify-between">
     <div class="flex pt-10">
-      <div class="pl-10">
+      <div class="pl-5 order-last">
+        <%= render @category.tasks %>
+      </div>
+      <div class="pl-10 order-first">
         <h2 class="text-2xl">Add a Task:</h2>
         <%= render 'tasks/form' %>
-      </div>
-      
-      <div class="pl-5">
-        <%= render @category.tasks %>
       </div>
     </div>
   </div>

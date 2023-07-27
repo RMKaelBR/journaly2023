@@ -41,6 +41,17 @@ nav{
   width: 300px;
  }
 
+ .theConsole {
+  width: 200px;
+  height: 250px;
+  position: fixed;
+  right: 10px;
+  top: 50px;
+  background-color: lightgray;
+  border: 1px solid black;
+  font-size: small;
+ }
+
  /* .welcome {
   width: 100%;
  } */

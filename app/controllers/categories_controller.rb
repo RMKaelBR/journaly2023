@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   # http_basic_authenticate_with name: "asdf", password: "zxcv", except: [:index, :show]
   before_action :require_user_logged_in!
+  
   def index
     @categories = Category.all
   end

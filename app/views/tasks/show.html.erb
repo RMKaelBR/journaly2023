@@ -1,0 +1,15 @@
+<div>
+  <header>
+      <nav >
+        <div class="hidden lg:flex lg:gap-x-12">
+          <div class="text-sm font-semibold leading-6 text-gray-900 navItems flex justify-evenly">
+            <%= link_to "Home", categories_path %>
+            <%= link_to "Category", category_path(@category) %>
+          </div>
+        </div>
+      </nav>
+    </header>
+  <%= @task.title %>
+  <br>
+  <%= @task.body %>
+</div>
