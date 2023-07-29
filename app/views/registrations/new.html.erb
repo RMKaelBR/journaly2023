@@ -1,0 +1,27 @@
+<div>
+  <nav>
+    <div class="hidden lg:flex lg:gap-x-12">
+      <div class="text-sm font-semibold leading-6 text-gray-900">
+        <%= link_to "Welcome Page", root_path %>
+      </div>
+    </div>
+  </nav>
+  <h1 class="font-bold text-2xl">Sign Up</h1>
+  <%= form_with model: @user, url: sign_up_path do |f| %>
+    <p>
+      <%= f.label 'email' %><br>
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.label 'password' %><br>
+      <%= f.password_field :password %>
+    </p>
+    <p>
+      <%= f.label 'password_confirmation' %><br>
+      <%= f.password_field :password_confirmation %>
+    </p>
+    <div>
+      <%= f.submit 'Sign Up', id: "postButton" %>
+    </div>
+  <% end %>
+</div>

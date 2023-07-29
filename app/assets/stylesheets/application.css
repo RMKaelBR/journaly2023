@@ -13,9 +13,18 @@
  *= require_tree .
  *= require_self
  */
+/* border: 1px solid red; */
 
- nav{
+body {
+  border: 1px solid red;
+}
+
+nav{
   background-color: peachpuff;
+  min-width: 30em;
+  position: fixed;
+  top: 10px;
+  left: 5px;
  }
  
  a:hover {
@@ -28,10 +37,29 @@
   color: blue;
  }
 
- #postTaskDiv {
-  background-color: black;
-  width: 500px;
-  border: 1px solid red;
+ .navItems {
+  width: 300px;
+ }
+
+ /* .theConsole {
+  width: 200px;
+  height: 250px;
+  position: fixed;
+  right: 10px;
+  top: 50px;
+  background-color: lightgray;
+  border: 1px solid black;
+  font-size: small;
+ } */
+
+ /* .welcome {
+  width: 100%;
+ } */
+
+ #postButton:hover {
+  cursor: pointer;
+  color: blue;
+
  }
 
  /* #pageTitle {

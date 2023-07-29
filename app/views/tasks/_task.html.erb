@@ -1,8 +1,9 @@
-<div class="space-x-5 relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-  <% unless task.archived? %>
+<% unless task.archived? %>
+  <div class="space-x-5 relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
     <div class="flex">
       <p class="w-80 max-w-xs">
-        <strong><%= task.title %></strong>
+        <%#<strong><%= task.title %><%#</strong>%>
+        <strong><%= link_to task.title, category_task_path(@category, task) %></strong>
       </p>
       <%= link_to "☒", [task.category, task], data: {
                       turbo_method: :delete,
@@ -13,5 +14,5 @@
     <p>
       <%= task.body %>
     <p>
-  <% end %>
-</div>
+  </div>
+<% end %>

@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  http_basic_authenticate_with name: "asdf", password: "zxcv", only: :destroy
+  before_action :require_user_logged_in!
   
   def create
     @category = Category.find(params[:category_id])
@@ -14,6 +14,11 @@ class TasksController < ApplicationController
     redirect_to category_path(@category), status: :see_other
   end
   
+  def show
+    @category = Category.find(params[:category_id])
+    @task = @category.tasks.find(params[:id])
+  end
+
   private
     def task_params
       params.require(:task).permit(:title, :body, :status)
