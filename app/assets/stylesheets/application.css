@@ -41,7 +41,7 @@ nav{
   width: 300px;
  }
 
- .theConsole {
+ /* .theConsole {
   width: 200px;
   height: 250px;
   position: fixed;
@@ -50,7 +50,7 @@ nav{
   background-color: lightgray;
   border: 1px solid black;
   font-size: small;
- }
+ } */
 
  /* .welcome {
   width: 100%;
