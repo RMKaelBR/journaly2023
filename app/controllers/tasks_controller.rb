@@ -1,6 +1,22 @@
 class TasksController < ApplicationController
   before_action :require_user_logged_in!
-  
+
+  def edit
+    @category = Category.find(params[:category_id])
+    @task = @category.tasks.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    @task = @category.tasks.find(params[:id])
+
+    if @task.update(task_params)
+      redirect_to @category
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def create
     @category = Category.find(params[:category_id])
     @task = @category.tasks.create(task_params)

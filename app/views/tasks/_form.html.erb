@@ -1,18 +1,22 @@
-<%= form_with model: [ @category, @category.tasks.build ] do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
-  <p>
-  <p>
-    <%= form.submit id: 'postButton' %>
-  </p>
-<% end %>
+<div>
+  <%= form_with model: [ @category, @category.tasks.build ] do |form| %>
+    <div>
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </div>
 
+    <div>
+      <%= form.label :body %><br>
+      <%= form.text_area :body %>
+    </div>
+
+    <div>
+      <%= form.label :status %><br>
+      <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+    </div>
+    
+    <div>
+      <%= form.submit id: 'postButton' %>
+    </div>
+  <% end %>
+</div>
