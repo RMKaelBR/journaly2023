@@ -21,7 +21,7 @@
 
 nav{
   background-color: peachpuff;
-  min-width: 30em;
+  min-width: 100%;
   position: fixed;
   top: 10px;
   left: 5px;
@@ -41,6 +41,9 @@ nav{
   width: 300px;
  }
 
+ .buttonStyle {
+  border: 1px solid black;
+ }
  /* .theConsole {
   width: 200px;
   height: 250px;

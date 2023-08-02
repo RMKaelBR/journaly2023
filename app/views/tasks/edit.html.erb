@@ -1,0 +1,20 @@
+<div>
+  <header>
+    <nav>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <div class="text-sm font-semibold leading-6 text-gray-900 navItems flex justify-evenly">
+          <%= link_to "Home", categories_path %>
+          <%= link_to "Category", category_path(@category) %>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <h1 class="font-bold text-4xl">Edit Task</h1>
+
+  <%= render "form_edit", category: @category, task: @task %>
+  
+  <footer>
+    <h1 id="pageTitle">Tasks#edit</h5>
+  </footer>
+</div>

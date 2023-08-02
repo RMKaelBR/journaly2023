@@ -2,9 +2,9 @@
   <header>
     <nav>
       <div class="hidden lg:flex lg:gap-x-12">
-        <div class="text-sm font-semibold leading-6 text-gray-900 flex navItems justify-evenly">
+        <div class="text-sm font-semibold leading-6 text-gray-900 navItems flex justify-evenly">
           <%= link_to "Home", categories_path %>
-          <p></p>
+          <%= link_to "Category", category_path(@category) %>
         </div>
       </div>
     </nav>
@@ -15,6 +15,6 @@
   <%= render "form", category: @category %>
 
   <footer>
-    <h1 id="pageTitle">Categories#new</h5>
+    <h1 id="pageTitle">Tasks#new</h5>
   </footer>
 </div>

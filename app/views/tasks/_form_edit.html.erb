@@ -1,13 +1,19 @@
 <div>
-  <%= form_with model: [ @category, @category.tasks.build ] do |form| %>
+  <%= form_with model: [@category, @task] do |form| %>
     <div>
       <%= form.label :title %><br>
       <%= form.text_field :title %>
+      <% @task.errors.full_messages_for(:title).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
     </div>
-
+    <br/>
     <div>
-      <%= form.label :body %><br>
+      <%= form.label :body %><br/>
       <%= form.text_area :body %>
+      <% @task.errors.full_messages_for(:body).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
     </div>
 
     <div>

@@ -1,15 +1,32 @@
 <div>
   <header>
-      <nav >
-        <div class="hidden lg:flex lg:gap-x-12">
-          <div class="text-sm font-semibold leading-6 text-gray-900 navItems flex justify-evenly">
-            <%= link_to "Home", categories_path %>
-            <%= link_to "Category", category_path(@category) %>
-          </div>
+    <nav>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <div class="text-sm font-semibold leading-6 text-gray-900 navItems flex justify-evenly">
+          <%= link_to "Home", categories_path %>
+          <%= link_to "Category", category_path(@category) %>
         </div>
-      </nav>
-    </header>
-  <%= @task.title %>
-  <br>
+      </div>
+    </nav>
+  </header>
+  <strong><%= @task.title %></strong>
+  <br/>
   <%= @task.body %>
+  <br/>
+  <br/>
+  <ul>
+    <button class="bg-orange-200 hover:bg-orange-400 text-black font-bold py-1 px-3 rounded-full">
+      <%= link_to "Edit Task", edit_category_task_path(@category, @task) %>
+    </button>
+    <button class="bg-orange-200 hover:bg-orange-400 text-black font-bold py-1 px-3 rounded-full">
+      <%= link_to "Delete Task", [@task.category, @task], data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure? This will delete '#{@task.title}'"
+                    } %>
+    </button>
+  </ul>                
+
+  <footer>
+    <h1 id="pageTitle">Tasks#show</h5>
+  </footer>  
 </div>
